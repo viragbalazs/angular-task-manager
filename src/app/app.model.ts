@@ -4,7 +4,7 @@ export class AppModel {
   constructor(
     public title?: string,
     public checked: boolean = false,
-    public category?: string,
+    public category?: Category,
     public text?: string) {
 
       //Object.keys(Category);
@@ -22,3 +22,10 @@ export enum Category {      // statikus fix adattag,konstans értékeket tudunk 
     SHOPPING = 'SHOPPING',
     TRAVEL = 'TRAVEL'
 }
+
+export interface AppInterface {
+    title?: string;
+    checked?: boolean;
+    category?: Category;
+    text?: string
+  }
