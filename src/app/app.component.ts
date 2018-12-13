@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {AppModel, AppInterface} from './app.model';
+import {AppModel, AppInterface, Category} from './app.model';
 
 @Component({
   selector: 'app-root',
@@ -21,8 +21,18 @@ export class AppComponent {
     console.log(this.appModel);
   }
 
+  getColor(checked: boolean):string {
+    return checked ? 'green' : 'red'; 
+  } 
+
   public changeChecked(isChecked: Event) {
     this.appModel.checked = !!isChecked;
+  }
+
+  colorCategory() {
+    if (this.appModel.category) {
+      return {'background-color': 'blue', 'color': 'white'}
+    }
   }
 
 }
